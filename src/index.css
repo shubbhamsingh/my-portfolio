@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700;900&display=swap');
 
+/* FIX: Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --bg-color: #020617;
   --surface-color: rgba(30, 41, 59, 0.4);
@@ -62,6 +67,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-primary {
   display: inline-flex;
   align-items: center;
+  justify-content: center; /* Center content */
   gap: 0.5rem;
   background: linear-gradient(90deg, var(--accent-purple), var(--accent-cyan));
   color: white;
@@ -74,6 +80,8 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   position: relative;
   z-index: 1;
+  max-width: 100%; /* Ensure it doesn't overflow container */
+  word-break: break-word; /* Allow long emails to wrap */
 }
 
 .btn-primary::before {
@@ -264,11 +272,15 @@ h1, h2, h3, h4, h5, h6 {
     gap: 2rem;
   }
   .section {
-    padding: 5rem 0;
+    padding: 5rem 1.5rem; /* FIX: Added horizontal padding to prevent edge sticking */
   }
   .glass-card {
     padding: 1.5rem;
   }
+  
+  /* FIX: Ensure buttons with long text (like email) handle spacing on small screens */
+  .btn-primary {
+    font-size: 1rem !important; 
+    padding: 0.75rem 1rem !important;
+  }
 }
-
-

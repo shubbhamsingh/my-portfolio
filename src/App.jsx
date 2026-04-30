@@ -8,19 +8,15 @@ const TypewriterText = ({ text, speed = 20, style, className }) => {
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   const [displayedLength, setDisplayedLength] = React.useState(0);
 
+  // FIX 1: Optimized Typewriter logic to prevent memory leaks
   useEffect(() => {
-    if (isInView) {
-      let i = 0;
-      const interval = setInterval(() => {
-        setDisplayedLength((prev) => {
-          if (prev < text.length) return prev + 1;
-          clearInterval(interval);
-          return prev;
-        });
+    if (isInView && displayedLength < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayedLength((prev) => prev + 1);
       }, speed);
-      return () => clearInterval(interval);
+      return () => clearTimeout(timeout);
     }
-  }, [isInView, text, speed]);
+  }, [isInView, displayedLength, text.length, speed]);
 
   return (
     <span ref={ref} className={className} style={style}>
@@ -31,6 +27,7 @@ const TypewriterText = ({ text, speed = 20, style, className }) => {
     </span>
   );
 };
+
 const TiltCard = ({ children, className }) => {
   const cardRef = useRef(null);
   
@@ -73,6 +70,19 @@ function App() {
   const { scrollYProgress } = useScroll();
   const yBg = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
 
+  // FIX 2: Mobile Menu Scroll Lock
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <>
       <div className="bg-layer">
@@ -83,7 +93,8 @@ function App() {
 
       <nav className="navbar">
         <div className="container nav-content">
-          <div className="nav-logo heading-gradient">SS.</div>
+          {/* Logo updated here */}
+          <div className="nav-logo heading-gradient">Shubham Raj</div>
           
           <button 
             className="mobile-menu-btn" 
@@ -273,9 +284,9 @@ function App() {
                 { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg' },
                 { name: 'HTML/CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg' },
                 { name: 'Git/GitHub', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg' }
-              ].map((skill, index) => (
+              ].map((skill) => (
                 <motion.div
-                  key={index}
+                  key={skill.name} // FIX 3: Replaced index with skill.name
                   whileHover={{ scale: 1.1, y: -5, borderColor: 'var(--accent-cyan)' }}
                   transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   style={{ 
@@ -292,7 +303,7 @@ function App() {
                     cursor: 'default'
                   }}
                 >
-                  <img src={skill.icon} alt={skill.name} style={{ width: '50px', height: '50px', filter: skill.name === 'Django REST' ? 'brightness(0) invert(1)' : 'none' }} />
+                  <img src={skill.icon} alt={skill.name} loading="lazy" style={{ width: '50px', height: '50px', filter: skill.name === 'Django REST' ? 'brightness(0) invert(1)' : 'none' }} />
                   <span style={{ fontWeight: '500', fontSize: '0.9rem', color: 'var(--text-secondary)' }}>{skill.name}</span>
                 </motion.div>
               ))}
@@ -313,7 +324,8 @@ function App() {
               {/* Project 1: UrbanShift */}
               <TiltCard className="project-card">
                 <div style={{ height: '200px', borderRadius: '8px', marginBottom: '1.5rem', overflow: 'hidden' }}>
-                  <img src="/urbanshift.png" alt="UrbanShift" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  {/* FIX: Added loading="lazy" */}
+                  <img src="/urbanshift.png" alt="UrbanShift" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>UrbanShift</h3>
                 <p style={{ color: 'var(--accent-cyan)', fontSize: '0.9rem', marginBottom: '1rem' }}>React.js • Django REST • PostgreSQL • WebSockets</p>
@@ -329,7 +341,8 @@ function App() {
               {/* Project 2: Tech Evolution */}
               <TiltCard className="project-card">
                 <div style={{ height: '200px', borderRadius: '8px', marginBottom: '1.5rem', overflow: 'hidden' }}>
-                  <img src="/techevolution.png" alt="Tech Evolution" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  {/* FIX: Added loading="lazy" */}
+                  <img src="/techevolution.png" alt="Tech Evolution" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Tech Evolution (Major Project)</h3>
                 <p style={{ color: 'var(--accent-emerald)', fontSize: '0.9rem', marginBottom: '1rem' }}>MERN Stack • Full Stack</p>
@@ -345,7 +358,8 @@ function App() {
               {/* Project 3: Student Registration Portal */}
               <TiltCard className="project-card">
                 <div style={{ height: '200px', borderRadius: '8px', marginBottom: '1.5rem', overflow: 'hidden' }}>
-                  <img src="/registration.png" alt="Student Registration Portal" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  {/* FIX: Added loading="lazy" */}
+                  <img src="/registration.png" alt="Student Registration Portal" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Student Registration Portal</h3>
                 <p style={{ color: 'var(--accent-purple)', fontSize: '0.9rem', marginBottom: '1rem' }}>HTML • CSS • JavaScript</p>
