@@ -6,8 +6,8 @@ import { experiences } from '../data/portfolioData';
 function Experience() {
   return (
     <section id="experience" className="section-padding relative overflow-hidden py-24">
-      <div className="absolute inset-0 bg-dot-pattern opacity-30" />
-      <div className="absolute top-1/4 -left-40 h-80 w-80 rounded-full bg-cyan-500/5 blur-[120px]" />
+      <div className="absolute inset-0 bg-dot-pattern opacity-10" />
+      <div className="absolute top-1/4 -left-40 h-80 w-80 animate-blob-delayed opacity-20" style={{ background: 'radial-gradient(circle, rgba(20,184,217,0.2) 0%, transparent 70%)' }} />
 
       <div className="container relative mx-auto px-4 md:px-8">
         <div className="mb-16 text-center">
@@ -32,7 +32,7 @@ function Experience() {
         </div>
 
         <div className="relative mx-auto max-w-3xl">
-          <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-emerald-500/50 via-cyan-500/30 to-transparent md:left-1/2 md:-translate-x-px" />
+          <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-emerald-400/50 via-cyan-400/30 via-purple-400/20 to-transparent md:left-1/2 md:-translate-x-px" />
 
           {experiences.map((exp, index) => (
             <motion.div
@@ -52,7 +52,7 @@ function Experience() {
               </div>
 
               <div className={`ml-16 w-full md:ml-0 md:w-[calc(50%-2rem)] ${index % 2 === 0 ? "md:pr-8" : "md:pl-8"}`}>
-                <div className="group glass rounded-xl p-6 transition-all duration-300 hover:border-white/10 hover:bg-[#1a1f2e]">
+                <div className="group liquid-glass rounded-xl p-6 transition-all duration-500 hover:border-emerald-500/20 hover:shadow-emerald-500/10">
                   <div className="mb-4 flex items-start gap-4">
                     <div className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${exp.color} text-lg font-bold text-white shadow-lg`}>
                       {exp.logo}

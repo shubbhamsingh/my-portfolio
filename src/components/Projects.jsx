@@ -20,8 +20,8 @@ function Projects() {
 
   return (
     <section id="projects" className="section-padding relative overflow-hidden py-24">
-      <div className="absolute inset-0 bg-grid-pattern opacity-30" />
-      <div className="absolute top-0 right-1/4 h-96 w-96 rounded-full bg-emerald-500/5 blur-[150px]" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-20" />
+      <div className="absolute top-0 right-1/4 h-96 w-96 animate-blob opacity-20" style={{ background: 'radial-gradient(circle, rgba(20,217,160,0.15) 0%, transparent 70%)' }} />
 
       <div className="container relative mx-auto px-4 md:px-8">
         <div className="mb-16 text-center">
@@ -53,7 +53,7 @@ function Projects() {
              whileInView={{ opacity: 1, y: 0 }}
              transition={{ duration: 0.5, delay: index * 0.1 }}
              viewport={{ once: true }}
-             className="group relative overflow-hidden rounded-2xl border border-white/[0.06] bg-[#1a1f2e]/80 backdrop-blur-sm flex flex-col transition-all hover:border-white/10 hover:bg-[#1a1f2e]"
+             className="group relative overflow-hidden rounded-2xl liquid-glass gradient-border flex flex-col transition-all duration-500 hover:border-emerald-500/20 hover:shadow-emerald-500/10"
            >
              <div className={`h-1 w-full bg-gradient-to-r ${project.color}`} />
              
@@ -94,7 +94,7 @@ function Projects() {
                     <FileSearch className="h-4 w-4"/> Case Study
                   </button>
 
-                  <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-white hover:brightness-110 transition-all shadow-lg shadow-emerald-500/20">
+                  <a href={project.demo} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 py-2 text-sm font-medium rounded-lg bg-gradient-to-r from-emerald-400 via-cyan-400 to-purple-400 text-white hover:brightness-110 transition-all bg-[length:200%] hover:bg-[length:100%] shadow-lg shadow-emerald-500/20">
                     Live <ArrowUpRight className="h-4 w-4"/>
                   </a>
                 </div>
@@ -122,10 +122,10 @@ function Projects() {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative w-full max-w-3xl max-h-[85vh] overflow-y-auto rounded-2xl border border-white/10 bg-[#0f141e] shadow-2xl shadow-black"
+              className="relative w-full max-w-3xl max-h-[85vh] overflow-y-auto rounded-2xl liquid-glass gradient-border shadow-2xl shadow-black"
             >
               {/* Modal Header */}
-              <div className="sticky top-0 z-10 flex items-center justify-between border-b border-white/10 bg-[#0f141e]/90 backdrop-blur-md px-6 py-4">
+              <div className="sticky top-0 z-10 flex items-center justify-between border-b border-white/5 liquid-glass px-6 py-4">
                 <div className="flex items-center gap-3">
                   <h3 className="text-xl font-bold text-white">{selectedProject.title}</h3>
                   <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-0.5 text-xs font-semibold text-emerald-400">
