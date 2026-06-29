@@ -1,14 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Terminal } from 'lucide-react';
-import { stats } from '../data/portfolioData';
+import { ArrowRight, Terminal, Download } from 'lucide-react'; // Download icon add kiya
+import { stats, RESUME_LINK } from '../data/portfolioData'; // RESUME_LINK import kiya
 
 function Hero() {
   return (
     <section className="relative flex min-h-screen items-center pt-20 overflow-hidden bg-mesh-pattern">
-      {/* Liquid Glass Glow Orbs */}
-      <div className="absolute top-1/4 left-0 h-[400px] w-[400px] animate-blob opacity-30" style={{ background: 'radial-gradient(circle, rgba(20,217,160,0.3) 0%, transparent 70%)' }} />
-      <div className="absolute bottom-1/4 right-1/4 h-[350px] w-[350px] animate-blob-delayed opacity-30" style={{ background: 'radial-gradient(circle, rgba(20,184,217,0.25) 0%, transparent 70%)' }} />
+      {/* Background glow specific to your colors */}
+      <div className="absolute top-1/4 left-0 h-[300px] w-[300px] rounded-full bg-emerald-500/10 blur-[120px]" />
+      <div className="absolute bottom-1/4 right-1/4 h-[300px] w-[300px] rounded-full bg-cyan-500/10 blur-[120px]" />
 
       <div className="container relative z-10 mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-12 items-center">
         
@@ -42,17 +42,41 @@ function Hero() {
             A passionate <strong className="text-white">Full Stack Developer</strong> specializing in <strong className="text-white">Python & React</strong>. I build scalable web applications and robust backend systems.
           </motion.p>
 
+          {/* 🔥 DYNAMIC BUTTONS SECTION 🔥 */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-10 flex flex-wrap gap-4"
+            className="mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
           >
-            <a href="#projects" className="px-8 py-3.5 rounded-lg bg-gradient-to-r from-emerald-400 via-cyan-400 to-purple-400 text-white font-semibold shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 transition-all bg-[length:200%] hover:bg-[length:100%] flex items-center gap-2">
+            {/* 💻 DESKTOP & TABLET BUTTONS (sm screens and above par hi dikhenge) */}
+            <a 
+              href="#projects" 
+              className="hidden sm:inline-flex px-8 py-3.5 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-semibold shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 transition-all items-center gap-2"
+            >
               Explore Projects <ArrowRight className="h-4 w-4" />
             </a>
-            <a href="#contact" className="px-8 py-3.5 rounded-lg glass text-white font-medium hover:bg-white/5 transition-all">
+            <a 
+              href="#contact" 
+              className="hidden sm:inline-flex px-8 py-3.5 rounded-lg glass text-white font-medium hover:bg-white/5 transition-all justify-center"
+            >
               Contact Me
+            </a>
+
+            {/* 📱 MOBILE BUTTONS (sirf small screens par dikhenge, with full width layout) */}
+            <a 
+              href="#contact" 
+              className="inline-flex sm:hidden w-full justify-center px-8 py-3.5 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-semibold shadow-lg shadow-emerald-500/20 transition-all items-center gap-2"
+            >
+              Contact Me
+            </a>
+            <a 
+              href={RESUME_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex sm:hidden w-full justify-center px-8 py-3.5 rounded-lg glass text-white font-medium hover:bg-white/5 transition-all items-center gap-2"
+            >
+              <Download className="h-4 w-4" /> Resume
             </a>
           </motion.div>
 
@@ -79,9 +103,8 @@ function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="hidden lg:flex justify-center relative"
         >
-           {/* Main Floating Liquid Glass Card */}
-          <div className="relative w-full max-w-md aspect-square rounded-2xl liquid-glass gradient-border p-8 flex flex-col justify-between animate-float overflow-hidden">
-             {/* Decorative code mockup inside the glass */}
+          {/* Main Floating Glass Card */}
+          <div className="relative w-full max-w-md aspect-square rounded-2xl glass border border-white/10 p-8 flex flex-col justify-between animate-float overflow-hidden">
              <div className="absolute top-0 left-0 w-full h-8 bg-black/40 flex items-center px-4 gap-2">
                <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
                <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
@@ -100,7 +123,7 @@ function Hero() {
                 <p className="ml-8 text-purple-400">return <span className="text-white">Success()</span></p>
              </div>
 
-             <div className="absolute bottom-[-20%] right-[-10%] w-64 h-64 bg-emerald-400 blur-[80px] rounded-full opacity-30"></div>
+             <div className="absolute bottom-[-20%] right-[-10%] w-64 h-64 bg-emerald-500/20 blur-[80px] rounded-full"></div>
           </div>
         </motion.div>
 

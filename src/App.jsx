@@ -1,4 +1,3 @@
-// src/App.jsx
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -11,16 +10,26 @@ import './index.css';
 
 function App() {
   return (
-    <div className="bg-background min-h-screen text-foreground font-sans selection:bg-primary/30 relative overflow-hidden">
-      {/* Liquid Glass Animated Blobs */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <div className="absolute top-[-10%] left-[-5%] w-[500px] h-[500px] animate-blob" style={{ background: 'radial-gradient(circle, rgba(20,217,160,0.15) 0%, transparent 70%)' }} />
-        <div className="absolute top-[20%] right-[-10%] w-[600px] h-[600px] animate-blob-delayed" style={{ background: 'radial-gradient(circle, rgba(20,184,217,0.12) 0%, transparent 70%)' }} />
-        <div className="absolute bottom-[-10%] left-[20%] w-[500px] h-[500px] animate-blob-slow" style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.1) 0%, transparent 70%)' }} />
-        <div className="absolute top-[50%] left-[40%] w-[400px] h-[400px] animate-blob" style={{ background: 'radial-gradient(circle, rgba(20,217,160,0.08) 0%, transparent 70%)' }} />
+    <div className="bg-background min-h-screen text-foreground font-sans selection:bg-[#14d9a0]/30 relative overflow-hidden">
+      
+      {/* 🌊 THE REAL APPLE iOS LIQUID TRICK 🌊 */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-[#020617]">
+        
+        {/* STEP 1: Bright, Colorful, Moving Blobs (Underneath) */}
+        <div className="absolute glow-orb animate-blob bg-[#14d9a0] w-[70vw] h-[70vw] top-[-20%] left-[-10%] opacity-60" />
+        <div className="absolute glow-orb animate-blob-delayed bg-[#14b8d9] w-[80vw] h-[80vw] bottom-[-20%] right-[-20%] opacity-50" />
+        <div className="absolute glow-orb animate-blob-slow bg-[#a855f7] w-[60vw] h-[60vw] top-[10%] left-[20%] opacity-50" />
+        
+        {/* STEP 2: The Magic Layer (Heavy Blur + Dark Tint) 
+            Ye layer blobs ko liquid ki tarah mix kar degi aur unhe dark kar degi taaki aapka TEXT ekdum saaf dikhe! */}
+        <div className="absolute inset-0 bg-[#020617]/75 backdrop-blur-[120px]"></div>
+        
+        {/* STEP 3: Subtle Mesh Pattern for texture */}
+        <div className="absolute inset-0 bg-mesh-pattern opacity-40"></div>
       </div>
 
       <Navbar />
+      
       <main className="flex flex-col relative z-10">
         <Hero />
         <About />
