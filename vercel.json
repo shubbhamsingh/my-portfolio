@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "api/track.js": {
+      "runtime": "@vercel/node@3"
+    }
+  },
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
