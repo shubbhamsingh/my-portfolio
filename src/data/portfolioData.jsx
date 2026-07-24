@@ -28,7 +28,7 @@ export const navLinks = [
 ];
 
 export const socialLinks = [
-  { name: "GitHub", href: "https://github.com/shubbhamsingh", icon: GithubIcon, label: "shubbhamsingh" },
+  { name: "GitHub", href: "https://github.com/shubham-raj-dev", icon: GithubIcon, label: "shubham-raj-dev" },
   { name: "LinkedIn", href: "https://www.linkedin.com/in/shubham-raj840/", icon: LinkedinIcon, label: "shubham-raj840" }
 ];
 
@@ -136,7 +136,7 @@ export const projects = [
     tagline: "Relocation & Property Platform",
     description: "A comprehensive full-stack platform integrating property buying/renting with Packers & Movers booking services. Features JWT auth, Razorpay, and real-time chat.",
     tags: ["React.js", "Django REST", "PostgreSQL", "WebSockets"],
-    github: "https://github.com/shubbhamsingh/UrbanShift-Project",
+    github: "https://github.com/shubham-raj-dev/UrbanShift-Project",
     demo: "https://urbanshift.vercel.app/",
     image: "/urbanshift.png",
     featured: true,
@@ -162,7 +162,7 @@ export const projects = [
     tagline: "Conference Landing Page",
     description: "A comprehensive major project exploring modern technological advancements. Features a robust backend and a dynamic frontend.",
     tags: ["HTML", "CSS", "JavaScript", "Responsive UI"],
-    github: "https://github.com/shubbhamsingh/Techvolution_2024_Major_Project",
+    github: "https://github.com/shubham-raj-dev/Techvolution_2024_Major_Project",
     demo: "https://shubbhamsingh.github.io/Techvolution_2024_Major_Project/",
     image: "/techevolution.png",
     featured: false,
@@ -188,7 +188,7 @@ export const projects = [
     tagline: "Efficient Data Collection",
     description: "A dynamic student registration form built for efficient data collection with robust client-side validation logic.",
     tags: ["Bootstrap 5", "HTML/CSS", "JavaScript Regex"],
-    github: "https://github.com/shubbhamsingh/Techvolution_Minor_Project",
+    github: "https://github.com/shubham-raj-dev/Techvolution_Minor_Project",
     demo: "https://shubbhamsingh.github.io/Techvolution_Minor_Project/",
     image: "/registration.png",
     featured: false,
