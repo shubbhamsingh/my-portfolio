@@ -24,8 +24,8 @@ const getLogo = (skillName) => {
 function Skills() {
   return (
     <section id="skills" className="section-padding relative overflow-hidden py-24">
-      <div className="absolute inset-0 bg-grid-pattern opacity-40" />
-      <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-cyan-500/5 blur-[150px]" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-20" />
+      <div className="absolute bottom-0 right-0 h-96 w-96 animate-blob-slow opacity-20" style={{ background: 'radial-gradient(circle, rgba(20,184,217,0.15) 0%, transparent 70%)' }} />
 
       <div className="container relative mx-auto px-4 md:px-8">
         <div className="mb-16 text-center">
@@ -59,7 +59,7 @@ function Skills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="group glass rounded-xl p-6 transition-all duration-300 hover:border-white/10 hover:bg-[#1a1f2e]"
+                className="group liquid-glass rounded-xl p-6 transition-all duration-500 hover:border-emerald-500/20 hover:shadow-emerald-500/10"
               >
                 <div className="mb-6 flex items-center gap-3 border-b border-white/5 pb-4">
                   <div className={`flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br ${category.color} shadow-lg`}>

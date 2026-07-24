@@ -6,8 +6,8 @@ import { socialLinks } from '../data/portfolioData';
 function Contact() {
   return (
     <section id="contact" className="section-padding relative overflow-hidden py-24 mb-10">
-      <div className="absolute inset-0 bg-grid-pattern opacity-30" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] rounded-full bg-cyan-500/5 blur-[150px]" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-20" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[500px] animate-blob-delayed opacity-20" style={{ background: 'radial-gradient(circle, rgba(20,184,217,0.15) 0%, transparent 70%)' }} />
 
       <div className="container relative mx-auto px-4 md:px-8">
         <div className="mb-16 text-center">
@@ -37,7 +37,7 @@ function Contact() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="glass-strong rounded-2xl p-8 md:p-10 text-center"
+            className="liquid-glass gradient-border rounded-2xl p-8 md:p-10 text-center"
           >
              <p className="mx-auto max-w-xl text-lg text-zinc-400 mb-8 leading-relaxed">
               I'm currently open for new opportunities, internships, and collaborations. Whether you have a question or just want to say hi, my inbox is always open!
@@ -76,7 +76,7 @@ function Contact() {
 
             <a
               href="mailto:shubhamsingh161203@gmail.com"
-              className="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 px-8 text-base font-semibold text-white shadow-lg shadow-emerald-500/25 transition-all hover:shadow-xl hover:shadow-emerald-500/40 hover:brightness-110"
+              className="inline-flex h-14 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-400 via-cyan-400 to-purple-400 px-8 text-base font-semibold text-white shadow-lg shadow-emerald-500/25 transition-all bg-[length:200%] hover:bg-[length:100%] hover:shadow-xl hover:shadow-emerald-500/40"
             >
               Say Hello <ArrowUpRight className="h-5 w-5" />
             </a>

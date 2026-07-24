@@ -5,8 +5,8 @@ import { User } from 'lucide-react';
 function About() {
   return (
     <section id="about" className="section-padding relative overflow-hidden py-24">
-      <div className="absolute inset-0 bg-dot-pattern opacity-20" />
-      <div className="absolute -right-40 top-1/3 h-80 w-80 rounded-full bg-accent/5 blur-[120px]" />
+      <div className="absolute inset-0 bg-dot-pattern opacity-10" />
+      <div className="absolute -right-40 top-1/3 h-80 w-80 animate-blob-slow opacity-20" style={{ background: 'radial-gradient(circle, rgba(20,217,160,0.2) 0%, transparent 70%)' }} />
 
       <div className="container relative mx-auto px-4 md:px-8">
         <div className="mb-16 text-center">
@@ -35,7 +35,7 @@ function About() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass rounded-2xl p-8 md:p-10"
+            className="liquid-glass gradient-border rounded-2xl p-8 md:p-10"
           >
             <div className="space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
               <p>

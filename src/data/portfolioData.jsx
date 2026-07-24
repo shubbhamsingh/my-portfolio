@@ -34,10 +34,34 @@ export const socialLinks = [
 
 export const stats = [
   { label: "Projects Built", value: "3+" },
-  { label: "Internships", value: "1" },
+  { label: "Internships", value: "5" },
 ];
 
 export const experiences = [
+  {
+    company: "Edunet Foundation & IBM",
+    role: "Artificial Intelligence Intern (6-Week)",
+    period: "May 2026 – Jun 2026",
+    location: "Remote (AICTE Approved)",
+    color: "from-violet-500 to-fuchsia-500",
+    logo: "E",
+    highlights: [
+      "Completed a rigorous 6-week track focusing deeply on Artificial Intelligence via the IBM SkillsBuild platform.",
+      "Developed a standalone AI project under mentor guidance, mastering foundational and advanced AI concepts.",
+    ],
+  },
+  {
+    company: "Edunet Foundation & IBM",
+    role: "AI & Cloud Technologies Intern (4-Week)",
+    period: "May 2026 – Jun 2026",
+    location: "Remote (AICTE Approved)",
+    color: "from-fuchsia-500 to-pink-500",
+    logo: "E",
+    highlights: [
+      "Accelerated 4-week dual-track internship focusing on Artificial Intelligence and IBM Cloud Platform integration.",
+      "Solved real-world challenges by deploying emerging technologies on enterprise cloud infrastructure.",
+    ],
+  },
   {
     company: "Infosys Springboard",
     role: "AI Virtual Intern (Track 7.0)",
@@ -52,11 +76,23 @@ export const experiences = [
     ],
   },
   {
+    company: "Cisco Networking Academy",
+    role: "Cybersecurity Virtual Intern",
+    period: "Jun 2025 – Aug 2025",
+    location: "Remote (AICTE Approved)",
+    color: "from-cyan-400 to-blue-500",
+    logo: "C",
+    highlights: [
+      "Completed intensive hands-on training in network security, threat detection, and mitigation strategies.",
+      "Analyzed system vulnerabilities and implemented robust cybersecurity frameworks for future-ready digital skillsets.",
+    ],
+  },
+  {
     company: "YHills",
     role: "Full-Stack Web Development Intern",
     period: "Mar 2024 – Jun 2024",
     location: "Remote",
-    color: "from-emerald-500 to-cyan-500",
+    color: "from-emerald-400 to-teal-500",
     logo: "Y",
     link: "https://drive.google.com/file/d/1ChF3Q0FmhhTlzvjGMcmA2P_V_rCZPgxx/view?usp=sharing",
     highlights: [
@@ -70,25 +106,25 @@ export const skillCategories = [
   {
     title: "Languages",
     icon: Code2,
-    color: "from-blue-500 to-cyan-500",
+    color: "from-blue-400 to-cyan-400",
     skills: ["Python", "JavaScript", "HTML/CSS"],
   },
   {
     title: "Frontend",
     icon: Layout,
-    color: "from-emerald-500 to-teal-500",
+    color: "from-emerald-400 to-teal-400",
     skills: ["React.js", "Tailwind CSS"],
   },
   {
     title: "Backend & Database",
     icon: Server,
-    color: "from-purple-500 to-indigo-500",
+    color: "from-purple-400 to-indigo-400",
     skills: ["Django REST", "Node.js", "PostgreSQL", "MongoDB"],
   },
   {
     title: "DevOps & Tools",
     icon: Wrench,
-    color: "from-pink-500 to-rose-500",
+    color: "from-pink-400 to-rose-400",
     skills: ["Git/GitHub"],
   }
 ];
@@ -104,7 +140,7 @@ export const projects = [
     demo: "https://urbanshift.vercel.app/",
     image: "/urbanshift.png",
     featured: true,
-    color: "from-emerald-500 to-cyan-600",
+    color: "from-emerald-400 to-cyan-500",
     caseStudy: {
       metrics: [
         { label: "USER ROLES", value: "3 Types" },
@@ -130,7 +166,7 @@ export const projects = [
     demo: "https://shubbhamsingh.github.io/Techvolution_2024_Major_Project/",
     image: "/techevolution.png",
     featured: false,
-    color: "from-blue-500 to-indigo-600",
+    color: "from-blue-400 to-indigo-500",
     caseStudy: {
       metrics: [
         { label: "TYPE", value: "Landing Page" },
@@ -156,7 +192,7 @@ export const projects = [
     demo: "https://shubbhamsingh.github.io/Techvolution_Minor_Project/",
     image: "/registration.png",
     featured: false,
-    color: "from-purple-500 to-pink-600",
+    color: "from-purple-400 to-pink-500",
     caseStudy: {
       metrics: [
         { label: "FRAMEWORK", value: "Bootstrap 5" },

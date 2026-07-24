@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Terminal } from 'lucide-react';
-import { stats } from '../data/portfolioData';
+import { ArrowRight, Terminal, Download } from 'lucide-react'; // Download icon add kiya
+import { stats, RESUME_LINK } from '../data/portfolioData'; // RESUME_LINK import kiya
 
 function Hero() {
   return (
@@ -42,17 +42,41 @@ function Hero() {
             A passionate <strong className="text-white">Full Stack Developer</strong> specializing in <strong className="text-white">Python & React</strong>. I build scalable web applications and robust backend systems.
           </motion.p>
 
+          {/* 🔥 DYNAMIC BUTTONS SECTION 🔥 */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-10 flex flex-wrap gap-4"
+            className="mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
           >
-            <a href="#projects" className="px-8 py-3.5 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-semibold shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 transition-all flex items-center gap-2">
+            {/* 💻 DESKTOP & TABLET BUTTONS (sm screens and above par hi dikhenge) */}
+            <a 
+              href="#projects" 
+              className="hidden sm:inline-flex px-8 py-3.5 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-semibold shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 transition-all items-center gap-2"
+            >
               Explore Projects <ArrowRight className="h-4 w-4" />
             </a>
-            <a href="#contact" className="px-8 py-3.5 rounded-lg glass text-white font-medium hover:bg-white/5 transition-all">
+            <a 
+              href="#contact" 
+              className="hidden sm:inline-flex px-8 py-3.5 rounded-lg glass text-white font-medium hover:bg-white/5 transition-all justify-center"
+            >
               Contact Me
+            </a>
+
+            {/* 📱 MOBILE BUTTONS (sirf small screens par dikhenge, with full width layout) */}
+            <a 
+              href="#contact" 
+              className="inline-flex sm:hidden w-full justify-center px-8 py-3.5 rounded-lg bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-semibold shadow-lg shadow-emerald-500/20 transition-all items-center gap-2"
+            >
+              Contact Me
+            </a>
+            <a 
+              href={RESUME_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex sm:hidden w-full justify-center px-8 py-3.5 rounded-lg glass text-white font-medium hover:bg-white/5 transition-all items-center gap-2"
+            >
+              <Download className="h-4 w-4" /> Resume
             </a>
           </motion.div>
 
@@ -81,7 +105,6 @@ function Hero() {
         >
           {/* Main Floating Glass Card */}
           <div className="relative w-full max-w-md aspect-square rounded-2xl glass border border-white/10 p-8 flex flex-col justify-between animate-float overflow-hidden">
-             {/* Decorative code mockup inside the glass */}
              <div className="absolute top-0 left-0 w-full h-8 bg-black/40 flex items-center px-4 gap-2">
                <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
                <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
